@@ -1,5 +1,5 @@
-function Main({ children }) {
+function Body({ children }) {
     return <main className="main">{ children }</main>
 }
 
-export default Main;
+export default Body;
