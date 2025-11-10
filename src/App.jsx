@@ -1,10 +1,17 @@
-import DateCounter from "./DateCounter.jsx"
+import Header from "./Header";
+import Main from "./Main";
+
 function App() {
 
   return (
     <>
-      <div>
-        <DateCounter />
+      <div className="app">
+        <Header />
+
+        <Main>
+          <p>1/15</p>
+          <p>Questions</p>
+        </Main>
       </div>
     </>
   );
