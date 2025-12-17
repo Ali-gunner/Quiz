@@ -2,7 +2,7 @@ import Header from "./Header";
 import Body from "./Body";
 import { useEffect, useReducer } from "react";
 import Loader from "./Loader";
-import Error from "./Error";
+import Error from "./ErrorMessage";
 import StartScreen from "./StartScreen";
 import Question from "./Question";
 import NextButton from "./NextButton";
@@ -10,6 +10,7 @@ import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
 import Footer from "./Footer";
 import Timer from "./Timer";
+import ErrorMessage from "./ErrorMessage";
 
 const SECS_PER_QUESTION = 30;
 
@@ -97,7 +98,7 @@ function App() {
 
         <Body>
           {status === "loading" && <Loader />}
-          {status === "error" && <Error />}
+          {status === "error" && <ErrorMessage />}
           {status === "ready" && (
             <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
           )}
@@ -134,6 +135,7 @@ function App() {
               points={points}
               maxPossiblePoints={maxPossiblePoints}
               highscore={highscore}
+              dispatch={dispatch}
             />
           )}
         </Body>
